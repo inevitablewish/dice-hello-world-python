@@ -16,7 +16,7 @@ sh 'py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
 stage('Deliver') {
 agent { docker { image 'cdrx/pyinstaller-linux:latest' } }
 steps {
-sh 'pyinstaller --onefile sources/add2vals.py'
+sh 'pyinstaller-linux --onefile sources/add2vals.py'
 }
 post {
 success {
