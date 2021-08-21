@@ -16,7 +16,7 @@ pipeline {
         stage('Deliver') {
             agent { docker { image 'cdrx/pyinstaller-linux:python2' } }
                 steps {
-                    sh '/root/.pyenv/shims/pyinstaller --onefile sources/add2vals.py'
+                    sh 'echo $PATH'
                 }
             post {
                 success {
